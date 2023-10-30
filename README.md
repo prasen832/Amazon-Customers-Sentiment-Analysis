@@ -1,4 +1,4 @@
-![image](https://github.com/prasen832/Amazon-Customers-Sentiment-Analysis/assets/53806281/799f5241-4957-46cd-b0b3-d8c05d618066)# Amazon Customers Sentiment Analysis
+# Amazon Customers Sentiment Analysis
 
 ## Overview
 Sentiment analysis is a natural language processing (NLP) technique that involves determining and extracting the sentiment or emotional tone expressed in a piece of text, such as a sentence, paragraph, or document. The goal of sentiment analysis is to understand and categorize the subjective information contained within the text as positive, negative, or neutral.
