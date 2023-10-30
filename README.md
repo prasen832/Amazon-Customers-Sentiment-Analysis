@@ -9,9 +9,8 @@ Sentiment analysis is a natural language processing (NLP) technique that involve
 
 We will use one of Amazon's Datasets which contains Product Name, Brand Name, Price, Rating, Reviews and Review Votes.
 
-[Link]() to download the Dataset.
+[Link](https://drive.google.com/file/d/1UJFPcMP8RtxUdniDIZTkr8kKFA-NWxz1/view?usp=sharing) to download the Dataset.
 
-## EDA and Feature Engineering
 
 ## Main aspects of sentiment analysis:
 
@@ -42,3 +41,5 @@ We will use one of Amazon's Datasets which contains Product Name, Brand Name, Pr
 6. Political analysis: Assessing public sentiment towards political candidates, parties, and issues during elections or campaigns.
 
 Sentiment analysis has become a valuable tool in a wide range of industries to better understand public perception, customer sentiment, and overall sentiment trends related to various subjects.
+
+## EDA and Feature Engineering
