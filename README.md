@@ -43,3 +43,39 @@ We will use one of Amazon's Datasets which contains Product Name, Brand Name, Pr
 Sentiment analysis has become a valuable tool in a wide range of industries to better understand public perception, customer sentiment, and overall sentiment trends related to various subjects.
 
 ## EDA and Feature Engineering
+
+1. Load the dataset using Pandas.
+2. Observe a few rows of the dataset carefully.
+3. Check all feature columns present in it.
+4. Use info() to check datatypes of all feature columns it also shows various info about the dataset.
+5. Check for, if null values present in the dataset. 
+6. Drop all missing values.
+7. Plot the complete Distribution of Ratings on the pie chart.
+8. Encode rating 4s and 5s as '1' i.e. Positive
+9. Encode rating 1s and 2s as '0' i.e. Negative
+10. Plot Positive, Neutral, and Negative sentiments count on the Pie Chart.
+11. Drop rating = 3, as we consider it as a neutral rating.
+12. Create a new feature column called 'Sentiment' where rating 4s and 5s are encoded as '1' i.e. Positive and rating 1s and 2s are encoded as '0' i.e. Negative.
+
+## Model Fitting using Logistic Regression
+1. We want to classify text reviews as Positive or Negative.
+2. So, X should contain only the 'Review' feature column which has the user's sentiment information in text format.
+3. y should contain only the 'Sentiment' feature column where Positive sentiments are encoded as 1 and Negative sentiments are encoded as 0.
+4. Split the dataset into train and test sets.
+
+## CountVectorizer
+
+In order to convert text into features we will use CountVectorizer(). 
+
+In scikit-learn's CountVectorizer, features refer to the individual words or terms in a text corpus that the vectorizer uses to create a numerical representation of the text data. The CountVectorizer is a text preprocessing and feature extraction tool commonly used in natural language processing (NLP) tasks, such as text classification and clustering. It converts a collection of text documents into a matrix of token counts, where each row of the matrix corresponds to a document, and each column corresponds to a unique term or word in the entire corpus.
+
+Here's how it works:
+
+1. **Tokenization**: CountVectorizer first tokenizes the input text data, which means it breaks the text into individual words or terms. These terms are considered features.
+
+
+2. **Feature Extraction**: For each term, it counts how many times that term appears in each document. These counts are then used to create the feature matrix. Each term becomes a feature, and the count of that term in a document is the value associated with that feature for that document.
+
+By default, scikit-learn's CountVectorizer **does not perform stemming or lemmatization**. It treats words as individual tokens without any linguistic normalization. If you want to apply stemming or lemmatization to your text data, you would typically need to do this as a separate preprocessing step before using CountVectorizer.
+
+Stemming and lemmatization are techniques used in natural language processing to reduce words to their base or root forms. Stemming reduces words to a common stem by removing suffixes, while lemmatization reduces words to their dictionary or lemma form.
