@@ -42,6 +42,30 @@ We will use one of Amazon's Datasets which contains Product Name, Brand Name, Pr
 
 Sentiment analysis has become a valuable tool in a wide range of industries to better understand public perception, customer sentiment, and overall sentiment trends related to various subjects.
 
+
+## CountVectorizer
+
+CountVectorizer() will convert text into numeric features and will return the document-term matrix. 
+
+In scikit-learn's CountVectorizer, features refer to the individual words or terms in a text corpus that the vectorizer uses to create a numerical representation of the text data. The CountVectorizer is a text preprocessing and feature extraction tool commonly used in natural language processing (NLP) tasks, such as text classification and clustering. It converts a collection of text documents into a matrix of token counts, where each row of the matrix corresponds to a document, and each column corresponds to a unique term or word in the entire corpus.
+
+Here's how it works:
+
+1. **Tokenization**: CountVectorizer first tokenizes the input text data, which means it breaks the text into individual words or terms. These terms are considered features.
+
+
+2. **Feature Extraction**: For each term, it counts how many times that term appears in each document. These counts are then used to create the feature matrix. Each term becomes a feature, and the count of that term in a document is the value associated with that feature for that document.
+
+By default, scikit-learn's CountVectorizer **does not perform stemming or lemmatization**. It treats words as individual tokens without any linguistic normalization. If you want to apply stemming or lemmatization to your text data, you would typically need to do this as a separate preprocessing step before using CountVectorizer.
+
+Stemming and lemmatization are techniques used in natural language processing to reduce words to their base or root forms. Stemming reduces words to a common stem by removing suffixes, while lemmatization reduces words to their dictionary or lemma form.
+
+## n-grams
+
+In scikit-learn's CountVectorizer, the **ngram_range** parameter is used to specify the range of n-grams to be extracted from the text data. N-grams are contiguous sequences of n items (words or characters) in a text document. By setting the ngram_range, you can control the size of the n-grams that are considered when vectorizing the text.
+
+The ngram_range parameter takes a tuple with two values: (min_n, max_n). These values define the minimum and maximum n-gram sizes to consider. For example, ngram_range=(1, 2) indicates that **both unigrams (single words) and bigrams (two-word sequences) should be considered** when creating the feature matrix.
+
 ## EDA and Feature Engineering
 
 1. Load the dataset using Pandas.
@@ -62,20 +86,18 @@ Sentiment analysis has become a valuable tool in a wide range of industries to b
 2. So, X should contain only the 'Review' feature column which has the user's sentiment information in text format.
 3. y should contain only the 'Sentiment' feature column where Positive sentiments are encoded as 1 and Negative sentiments are encoded as 0.
 4. Split the dataset into train and test sets.
+5. Fit and transform the data into CountVectorizer().
+6. CountVectorizer() will convert text into numeric features and will return the document-term matrix.
+7. Now, we are ready for Binary Classification.
+8. Fit the model using Logistic Regression.
+9. Calculate the AUC score.
+10. Check the model's performance by predicting any unknown text review.
 
-## CountVectorizer
-
-In order to convert text into features we will use CountVectorizer(). 
-
-In scikit-learn's CountVectorizer, features refer to the individual words or terms in a text corpus that the vectorizer uses to create a numerical representation of the text data. The CountVectorizer is a text preprocessing and feature extraction tool commonly used in natural language processing (NLP) tasks, such as text classification and clustering. It converts a collection of text documents into a matrix of token counts, where each row of the matrix corresponds to a document, and each column corresponds to a unique term or word in the entire corpus.
-
-Here's how it works:
-
-1. **Tokenization**: CountVectorizer first tokenizes the input text data, which means it breaks the text into individual words or terms. These terms are considered features.
-
-
-2. **Feature Extraction**: For each term, it counts how many times that term appears in each document. These counts are then used to create the feature matrix. Each term becomes a feature, and the count of that term in a document is the value associated with that feature for that document.
-
-By default, scikit-learn's CountVectorizer **does not perform stemming or lemmatization**. It treats words as individual tokens without any linguistic normalization. If you want to apply stemming or lemmatization to your text data, you would typically need to do this as a separate preprocessing step before using CountVectorizer.
-
-Stemming and lemmatization are techniques used in natural language processing to reduce words to their base or root forms. Stemming reduces words to a common stem by removing suffixes, while lemmatization reduces words to their dictionary or lemma form.
+## Using n-grams for more accuracy and then fitting the Model
+1. In the last case, we are considering only single words and not word sequences.
+2. Hence, the model is unable to identify the difference between 'issue' and 'not issue'.
+3. This problem will be solved when we will use ngram_range in CountVectorizer().
+4. Now, again fit and transform the data into CountVectorizer().
+5. Fit the model using Logistic Regression.
+6. Calculate the AUC score.
+7. Check the model's performance by predicting any unknown text review.
