@@ -81,6 +81,14 @@ The ngram_range parameter takes a tuple with two values: (min_n, max_n). These v
 11. Drop rating = 3, as we consider it as a neutral rating.
 12. Create a new feature column called 'Sentiment' where rating 4s and 5s are encoded as '1' i.e. Positive and rating 1s and 2s are encoded as '0' i.e. Negative.
 
+## Distribution of Ratings Plot
+
+![img1](Rantings.png)
+
+## Overview of Sentiments Analysis Plot
+
+![img2](Sentiments.png)
+
 ## Model Fitting using Logistic Regression
 1. We want to classify text reviews as Positive or Negative.
 2. So, X should contain only the 'Review' feature column which has the user's sentiment information in text format.
