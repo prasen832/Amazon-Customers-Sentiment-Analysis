@@ -83,7 +83,7 @@ The ngram_range parameter takes a tuple with two values: (min_n, max_n). These v
 
 ## Distribution of Ratings Plot
 
-![img1](Rantings.png)
+![img1](Ratings.png)
 
 ## Overview of Sentiments Analysis Plot
 
@@ -109,3 +109,5 @@ The ngram_range parameter takes a tuple with two values: (min_n, max_n). These v
 5. Fit the model using Logistic Regression.
 6. Calculate the AUC score.
 7. Check the model's performance by predicting any unknown text review.
+
+### Now Let us jump into Jupyter Notebook
