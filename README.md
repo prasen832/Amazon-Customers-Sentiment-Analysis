@@ -110,4 +110,4 @@ The ngram_range parameter takes a tuple with two values: (min_n, max_n). These v
 6. Calculate the AUC score.
 7. Check the model's performance by predicting any unknown text review.
 
-### Now, let's jump into the Jupyter Notebook and begin the Coding work.
+### Now, let's jump into the Jupyter Notebook and take a look at the Python Code Implementation.
